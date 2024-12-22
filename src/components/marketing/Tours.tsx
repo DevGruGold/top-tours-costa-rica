@@ -28,6 +28,20 @@ const tours = [
     desc: "Guided photo tour - Half day",
     priceRange: "$75-150",
     emoji: "📸"
+  },
+  {
+    id: 5,
+    title: "Kayak Over a Waterfall",
+    desc: "Adventure seekers only - Half day",
+    priceRange: "$75-150",
+    emoji: "🛶"
+  },
+  {
+    id: 6,
+    title: "Sloth Speed Dating",
+    desc: "Slow-paced wildlife encounter - Half day",
+    priceRange: "$75-150",
+    emoji: "🦥"
   }
 ];
 
