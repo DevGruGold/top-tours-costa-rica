@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BookingForm from './BookingForm';
 
 const MarketingPage = () => {
+  const [selectedTour, setSelectedTour] = useState<number | null>(null);
+  
   const tours = [
     {
       id: 1,
@@ -89,26 +92,30 @@ const MarketingPage = () => {
           <h3 className="text-2xl font-bold mb-6 text-center">Popular Tours</h3>
           <div className="grid gap-4 max-w-xl mx-auto">
             {tours.map((tour) => (
-              <div 
-                key={tour.id}
-                className="bg-white rounded-lg border border-gray-200 p-4 flex justify-between items-center hover:border-green-500 transition-colors"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl">{tour.emoji}</span>
-                  <div>
-                    <h4 className="font-medium">{tour.title}</h4>
-                    <p className="text-sm text-gray-500">{tour.desc}</p>
-                    <p className="text-green-600 font-medium">{tour.price}</p>
-                  </div>
-                </div>
-                <a
-                  href="https://wa.me/50689484857"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-green-200"
+              <div key={tour.id}>
+                <div 
+                  className="bg-white rounded-lg border border-gray-200 p-4 flex justify-between items-center hover:border-green-500 transition-colors"
                 >
-                  Book
-                </a>
+                  <div className="flex items-center gap-4">
+                    <span className="text-3xl">{tour.emoji}</span>
+                    <div>
+                      <h4 className="font-medium">{tour.title}</h4>
+                      <p className="text-sm text-gray-500">{tour.desc}</p>
+                      <p className="text-green-600 font-medium">{tour.price}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSelectedTour(selectedTour === tour.id ? null : tour.id)}
+                    className="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-green-200"
+                  >
+                    {selectedTour === tour.id ? 'Close' : 'Book'}
+                  </button>
+                </div>
+                {selectedTour === tour.id && (
+                  <div className="mt-4">
+                    <BookingForm tourTitle={tour.title} tourPrice={tour.price} />
+                  </div>
+                )}
               </div>
             ))}
           </div>
