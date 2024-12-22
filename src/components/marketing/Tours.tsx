@@ -3,45 +3,52 @@ import React from 'react';
 const tours = [
   {
     id: 1,
-    title: "Arenal Volcano",
-    desc: "Hiking & hot springs - Full day",
-    priceRange: "$75-150",
-    emoji: "🌋"
-  },
-  {
-    id: 2,
-    title: "Manuel Antonio",
-    desc: "Beach & wildlife - Full day",
-    priceRange: "$75-150",
-    emoji: "🏖️"
-  },
-  {
-    id: 3,
-    title: "Coffee Tour",
-    desc: "Plantation visit - Half day",
-    priceRange: "$75-150",
-    emoji: "☕"
-  },
-  {
-    id: 4,
-    title: "Wildlife Photo",
-    desc: "Guided photo tour - Half day",
-    priceRange: "$75-150",
-    emoji: "📸"
-  },
-  {
-    id: 5,
     title: "Kayak Over a Waterfall",
     desc: "Adventure seekers only - Half day",
     priceRange: "$75-150",
     emoji: "🛶"
   },
   {
-    id: 6,
+    id: 2,
     title: "Sloth Speed Dating",
     desc: "Slow-paced wildlife encounter - Half day",
     priceRange: "$75-150",
     emoji: "🦥"
+  },
+  {
+    id: 3,
+    title: "Smokin and Day Drinking",
+    desc: "El Salto Rope Swing - Full day",
+    priceRange: "$75-150",
+    emoji: "🍻"
+  },
+  {
+    id: 4,
+    title: "Arenal Volcano",
+    desc: "Hiking & hot springs - Full day",
+    priceRange: "$75-150",
+    emoji: "🌋"
+  },
+  {
+    id: 5,
+    title: "Manuel Antonio",
+    desc: "Beach & wildlife - Full day",
+    priceRange: "$75-150",
+    emoji: "🏖️"
+  },
+  {
+    id: 6,
+    title: "Coffee Tour",
+    desc: "Plantation visit - Half day",
+    priceRange: "$75-150",
+    emoji: "☕"
+  },
+  {
+    id: 7,
+    title: "Wildlife Photo",
+    desc: "Guided photo tour - Half day",
+    priceRange: "$75-150",
+    emoji: "📸"
   }
 ];
 
