@@ -7,84 +7,84 @@ const tours = [
     id: 1,
     title: "Kayak Over a Waterfall",
     desc: "Adventure seekers only - Half day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🛶"
   },
   {
     id: 2,
     title: "Sloth Speed Dating",
     desc: "Slow-paced wildlife encounter - Half day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🦥"
   },
   {
     id: 3,
     title: "Smokin and Day Drinking",
     desc: "El Salto Rope Swing - Full day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🍻"
   },
   {
     id: 4,
     title: "Arenal Volcano",
     desc: "Hiking & hot springs - Full day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🌋"
   },
   {
     id: 5,
     title: "Manuel Antonio",
     desc: "Beach & wildlife - Full day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🏖️"
   },
   {
     id: 6,
     title: "Coffee Tour",
     desc: "Plantation visit - Half day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "☕"
   },
   {
     id: 7,
     title: "Wildlife Photo",
     desc: "Guided photo tour - Half day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "📸"
   },
   {
     id: 8,
     title: "Zip Line Extreme",
     desc: "Canopy adventure - Half day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🎢"
   },
   {
     id: 9,
     title: "Night Jungle Trek",
     desc: "Nocturnal wildlife spotting - Evening",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🌙"
   },
   {
     id: 10,
     title: "White Water Rafting",
     desc: "Rapids adventure - Full day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🚣"
   },
   {
     id: 11,
     title: "Surf Lessons",
     desc: "Beach & waves - Half day",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🏄"
   },
   {
     id: 12,
     title: "Horseback Beach Ride",
     desc: "Sunset tour - Evening",
-    priceRange: "$75-150",
+    priceRange: "Seasonal pricing",
     emoji: "🐎"
   }
 ];
@@ -107,7 +107,7 @@ const Tours = () => {
                 <div>
                   <h4 className="font-medium">{tour.title}</h4>
                   <p className="text-sm text-gray-500">{tour.desc}</p>
-                  <p className="text-green-600 font-medium">{tour.priceRange}</p>
+                  <p className="text-green-600 font-medium italic text-sm">{tour.priceRange}</p>
                 </div>
               </div>
               <Dialog>
