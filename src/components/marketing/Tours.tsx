@@ -49,6 +49,41 @@ const tours = [
     desc: "Guided photo tour - Half day",
     priceRange: "$75-150",
     emoji: "📸"
+  },
+  {
+    id: 8,
+    title: "Zip Line Extreme",
+    desc: "Canopy adventure - Half day",
+    priceRange: "$75-150",
+    emoji: "🎢"
+  },
+  {
+    id: 9,
+    title: "Night Jungle Trek",
+    desc: "Nocturnal wildlife spotting - Evening",
+    priceRange: "$75-150",
+    emoji: "🌙"
+  },
+  {
+    id: 10,
+    title: "White Water Rafting",
+    desc: "Rapids adventure - Full day",
+    priceRange: "$75-150",
+    emoji: "🚣"
+  },
+  {
+    id: 11,
+    title: "Surf Lessons",
+    desc: "Beach & waves - Half day",
+    priceRange: "$75-150",
+    emoji: "🏄"
+  },
+  {
+    id: 12,
+    title: "Horseback Beach Ride",
+    desc: "Sunset tour - Evening",
+    priceRange: "$75-150",
+    emoji: "🐎"
   }
 ];
 
