@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BookingForm from '../BookingForm';
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const tours = [
   {
@@ -88,6 +90,8 @@ const tours = [
 ];
 
 const Tours = () => {
+  const [selectedTour, setSelectedTour] = useState<{ title: string; priceRange: string } | null>(null);
+
   return (
     <section className="px-4 py-8">
       <div className="container mx-auto">
@@ -106,14 +110,24 @@ const Tours = () => {
                   <p className="text-green-600 font-medium">{tour.priceRange}</p>
                 </div>
               </div>
-              <a
-                href="https://wa.me/50689484857"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-green-200"
-              >
-                Book
-              </a>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    onClick={() => setSelectedTour({ title: tour.title, priceRange: tour.priceRange })}
+                    className="bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-green-200"
+                  >
+                    Book
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  {selectedTour && (
+                    <BookingForm 
+                      tourTitle={selectedTour.title}
+                      tourPrice={selectedTour.priceRange}
+                    />
+                  )}
+                </DialogContent>
+              </Dialog>
             </div>
           ))}
         </div>
