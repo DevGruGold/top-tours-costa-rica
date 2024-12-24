@@ -12,8 +12,8 @@ const Features = () => {
           </div>
           <div className="text-center">
             <span className="block text-3xl mb-2">🚐</span>
-            <h4 className="font-medium">Hotel Pickup</h4>
-            <p className="text-sm text-gray-500">Included</p>
+            <h4 className="font-medium">Transfers</h4>
+            <p className="text-sm text-gray-500">Available</p>
           </div>
           <div className="text-center">
             <span className="block text-3xl mb-2">💰</span>
