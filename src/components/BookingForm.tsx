@@ -18,17 +18,21 @@ const BookingForm = ({ tourTitle, tourPrice }: BookingFormProps) => {
       return;
     }
 
-    const message = encodeURIComponent(
-      `*New Booking Request*\n` +
-      `Tour: ${tourTitle}\n` +
-      `Date: ${format(date, 'MMMM d, yyyy')}\n` +
-      `Adults: ${adults}\n` +
-      `Price: ${tourPrice}/person`
-    );
+    const message = `*New Booking Request*\nTour: ${tourTitle}\nDate: ${format(date, 'MMMM d, yyyy')}\nAdults: ${adults}\nPrice: ${tourPrice}/person`;
+    const encodedMessage = encodeURIComponent(message);
 
-    // Open WhatsApp in two new tabs for both numbers
-    window.open(`https://wa.me/50689484857?text=${message}`, '_blank');
-    window.open(`https://wa.me/50661500559?text=${message}`, '_blank');
+    // Try to open WhatsApp first
+    const whatsappWindow1 = window.open(`https://wa.me/50689484857?text=${encodedMessage}`, '_blank');
+    const whatsappWindow2 = window.open(`https://wa.me/50661500559?text=${encodedMessage}`, '_blank');
+
+    // If WhatsApp windows were blocked or failed to open, fallback to email
+    setTimeout(() => {
+      if (!whatsappWindow1 || whatsappWindow1.closed || !whatsappWindow2 || whatsappWindow2.closed) {
+        const emailSubject = encodeURIComponent(`Booking Request: ${tourTitle}`);
+        const emailBody = encodeURIComponent(message.replace(/\*/g, '').replace(/\n/g, '%0D%0A'));
+        window.location.href = `mailto:info@toptourscostarica.com?subject=${emailSubject}&body=${emailBody}`;
+      }
+    }, 1000);
   };
 
   return (
