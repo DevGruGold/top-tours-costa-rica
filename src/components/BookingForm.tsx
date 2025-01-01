@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { format } from 'date-fns';
 import { Calendar } from "@/components/ui/calendar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { format } from "date-fns";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 interface BookingFormProps {
   tourTitle: string;
@@ -9,72 +10,59 @@ interface BookingFormProps {
 }
 
 const BookingForm = ({ tourTitle, tourPrice }: BookingFormProps) => {
-  const [date, setDate] = useState<Date | undefined>(undefined);
-  const [adults, setAdults] = useState(2);
+  const [date, setDate] = useState<Date>(new Date());
+  const [adults, setAdults] = useState(1);
 
-  const handleBooking = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     if (!date) {
-      alert("Please select a date");
       return;
     }
 
-    // Open payment link in a new tab
-    window.open('https://crpay.vercel.app/', '_blank');
-
-    const message = `*New Booking Request*\nTour: ${tourTitle}\nDate: ${format(date, 'MMMM d, yyyy')}\nAdults: ${adults}\nPrice: ${tourPrice}/person\n\nPayment Link: https://crpay.vercel.app/`;
+    const message = `*New Booking Request*\nTour: ${tourTitle}\nDate: ${format(date, 'MMMM d, yyyy')}\nAdults: ${adults}\nPrice: ${tourPrice}/person`;
     const encodedMessage = encodeURIComponent(message);
 
     // Try to open WhatsApp first
-    const whatsappWindow1 = window.open(`https://wa.me/50689484857?text=${encodedMessage}`, '_blank');
-    const whatsappWindow2 = window.open(`https://wa.me/50661500559?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/50689484857?text=${encodedMessage}`, '_blank');
 
-    // If WhatsApp windows were blocked or failed to open, fallback to email
+    // Set up email as fallback
     setTimeout(() => {
-      if (!whatsappWindow1 || whatsappWindow1.closed || !whatsappWindow2 || whatsappWindow2.closed) {
-        const emailSubject = encodeURIComponent(`Booking Request: ${tourTitle}`);
-        const emailBody = encodeURIComponent(message.replace(/\*/g, '').replace(/\n/g, '%0D%0A'));
-        window.location.href = `mailto:info@toptourscostarica.com?subject=${emailSubject}&body=${emailBody}`;
-      }
+      const mailtoLink = `mailto:youremail@example.com?subject=Tour Booking Request&body=${encodedMessage}`;
+      window.location.href = mailtoLink;
     }, 1000);
   };
 
   return (
-    <Card className="w-full max-w-sm mx-auto">
-      <CardHeader>
-        <CardTitle className="text-center text-lg">Select Date & Guests</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="flex justify-center">
-          <Calendar
-            mode="single"
-            selected={date}
-            onSelect={setDate}
-            className="rounded-md border"
-            disabled={(date) => date < new Date()}
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <label className="block text-sm font-medium text-gray-700">Number of Adults</label>
-          <select 
-            value={adults}
-            onChange={(e) => setAdults(Number(e.target.value))}
-            className="w-full rounded-md border border-gray-300 p-2"
-          >
-            {[1,2,3,4,5,6,7,8].map(num => (
-              <option key={num} value={num}>{num}</option>
-            ))}
-          </select>
-        </div>
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <Label>Select Date</Label>
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={(newDate) => newDate && setDate(newDate)}
+          className="rounded-md border"
+        />
+      </div>
+      
+      <div>
+        <Label htmlFor="adults">Number of Adults</Label>
+        <Input
+          id="adults"
+          type="number"
+          min="1"
+          value={adults}
+          onChange={(e) => setAdults(parseInt(e.target.value))}
+          className="w-full"
+        />
+      </div>
 
-        <button
-          onClick={handleBooking}
-          className="w-full bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-green-600"
-        >
-          Book via WhatsApp
-        </button>
-      </CardContent>
-    </Card>
+      <button
+        type="submit"
+        className="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+      >
+        Book Now
+      </button>
+    </form>
   );
 };
 
