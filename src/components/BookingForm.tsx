@@ -18,7 +18,10 @@ const BookingForm = ({ tourTitle, tourPrice }: BookingFormProps) => {
       return;
     }
 
-    const message = `*New Booking Request*\nTour: ${tourTitle}\nDate: ${format(date, 'MMMM d, yyyy')}\nAdults: ${adults}\nPrice: ${tourPrice}/person`;
+    // Open payment link in a new tab
+    window.open('https://crpay.vercel.app/', '_blank');
+
+    const message = `*New Booking Request*\nTour: ${tourTitle}\nDate: ${format(date, 'MMMM d, yyyy')}\nAdults: ${adults}\nPrice: ${tourPrice}/person\n\nPayment Link: https://crpay.vercel.app/`;
     const encodedMessage = encodeURIComponent(message);
 
     // Try to open WhatsApp first
