@@ -23,7 +23,7 @@ const BookingForm = ({ tourTitle, tourPrice }: BookingFormProps) => {
     const encodedMessage = encodeURIComponent(message);
 
     // Try to open WhatsApp first
-    window.open(`https://wa.me/50689484857?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/50661500559?text=${encodedMessage}`, '_blank');
 
     // Set up email as fallback
     setTimeout(() => {
