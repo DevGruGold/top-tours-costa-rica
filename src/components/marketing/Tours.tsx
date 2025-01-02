@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BookingForm from '../BookingForm';
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Sunrise, Bird, Mountain, Trees } from 'lucide-react';
+import { Sunrise, Bird, Mountain, Trees, Building } from 'lucide-react';
 
 const tours = [
   {
@@ -94,6 +94,27 @@ const tours = [
     desc: "Wildlife spotting tour - Half day",
     priceRange: "Seasonal pricing",
     icon: Trees
+  },
+  {
+    id: 16,
+    title: "Macaw Spotting",
+    desc: "Scarlet macaw observation - Half day",
+    priceRange: "Seasonal pricing",
+    icon: Bird
+  },
+  {
+    id: 17,
+    title: "Toucan Adventure",
+    desc: "Rainforest bird watching - Half day",
+    priceRange: "Seasonal pricing",
+    icon: Bird
+  },
+  {
+    id: 18,
+    title: "Malekus Cultural Tour",
+    desc: "Indigenous culture & traditions - Full day",
+    priceRange: "Seasonal pricing",
+    icon: Building
   }
 ];
 
