@@ -11,18 +11,12 @@ const Hero = () => {
         <div className="flex justify-center gap-4">
           <a 
             href="tel:+50661500559"
-</lov-search>
-<lov-search>
-            href="https://wa.me/50689484857"
-</lov-search>
-<lov-replace>
-            href="https://wa.me/50661500559"
             className="bg-white text-green-600 px-6 py-3 rounded-lg text-sm font-medium"
           >
             📞 Call Now
           </a>
           <a 
-            href="https://wa.me/50689484857"
+            href="https://wa.me/50661500559"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-6 py-3 rounded-lg text-sm font-medium"
