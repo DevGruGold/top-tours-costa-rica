@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BookingForm from '../BookingForm';
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Zipline, Sunrise, Bird, Monkey } from 'lucide-react';
 
 const tours = [
   {
@@ -11,13 +12,6 @@ const tours = [
     emoji: "🦥"
   },
   {
-    id: 3,
-    title: "Smokin and Day Drinking",
-    desc: "El Salto Rope Swing - Full day",
-    priceRange: "Seasonal pricing",
-    emoji: "🍻"
-  },
-  {
     id: 4,
     title: "Arenal Volcano",
     desc: "Hiking & hot springs - Full day",
@@ -26,8 +20,8 @@ const tours = [
   },
   {
     id: 5,
-    title: "Manuel Antonio",
-    desc: "Beach & wildlife - Full day",
+    title: "Manuel Antonio & Damas Islands",
+    desc: "Beach, wildlife & mangrove tour - Full day",
     priceRange: "Seasonal pricing",
     emoji: "🏖️"
   },
@@ -50,7 +44,7 @@ const tours = [
     title: "Zip Line Extreme",
     desc: "Canopy adventure - Half day",
     priceRange: "Seasonal pricing",
-    emoji: "🎢"
+    icon: Zipline
   },
   {
     id: 9,
@@ -79,6 +73,27 @@ const tours = [
     desc: "Sunset tour - Evening",
     priceRange: "Seasonal pricing",
     emoji: "🐎"
+  },
+  {
+    id: 13,
+    title: "Sunrise Energy Yoga",
+    desc: "Morning yoga session - Early morning",
+    priceRange: "Seasonal pricing",
+    icon: Sunrise
+  },
+  {
+    id: 14,
+    title: "Morning Bird Watching",
+    desc: "Guided birding tour - Early morning",
+    priceRange: "Seasonal pricing",
+    icon: Bird
+  },
+  {
+    id: 15,
+    title: "Monkeys & Mammals",
+    desc: "Wildlife spotting tour - Half day",
+    priceRange: "Seasonal pricing",
+    icon: Monkey
   }
 ];
 
@@ -96,7 +111,11 @@ const Tours = () => {
               className="bg-white rounded-lg border border-gray-200 p-4 flex justify-between items-center hover:border-green-500 transition-colors"
             >
               <div className="flex items-center gap-4">
-                <span className="text-3xl">{tour.emoji}</span>
+                {tour.icon ? (
+                  <tour.icon className="w-8 h-8" />
+                ) : (
+                  <span className="text-3xl">{tour.emoji}</span>
+                )}
                 <div>
                   <h4 className="font-medium">{tour.title}</h4>
                   <p className="text-sm text-gray-500">{tour.desc}</p>
