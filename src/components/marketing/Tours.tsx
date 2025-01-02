@@ -4,13 +4,6 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const tours = [
   {
-    id: 1,
-    title: "Kayak Over a Waterfall",
-    desc: "Adventure seekers only - Half day",
-    priceRange: "Seasonal pricing",
-    emoji: "🛶"
-  },
-  {
     id: 2,
     title: "Sloth Speed Dating",
     desc: "Slow-paced wildlife encounter - Half day",

@@ -10,7 +10,7 @@ const Footer = () => {
           href="tel:+50689484857"
           className="text-green-400 hover:text-green-300"
         >
-          +506 8948-4857
+          +506 6150-0559
         </a>
         <div className="mt-6 text-xs text-gray-500">
           © 2024 Top Tours Costa Rica

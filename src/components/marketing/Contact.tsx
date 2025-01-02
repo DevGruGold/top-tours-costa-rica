@@ -7,13 +7,13 @@ const Contact = () => {
         <h3 className="text-2xl font-bold mb-6">Book Your Adventure</h3>
         <div className="space-y-4">
           <a 
-            href="tel:+50689484857"
+            href="tel:+50661500559"
             className="block w-full bg-white text-green-600 py-3 rounded-lg font-medium hover:bg-green-50"
           >
-            📞 Call +506 8948-4857
+            📞 Call +506 6150-0559
           </a>
           <a 
-            href="https://wa.me/50689484857"
+            href="https://wa.me/50661500559"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-400"
