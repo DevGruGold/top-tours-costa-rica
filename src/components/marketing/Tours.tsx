@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BookingForm from '../BookingForm';
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Zipline, Sunrise, Bird, Monkey } from 'lucide-react';
+import { Sunrise, Bird, Mountain, Trees } from 'lucide-react';
 
 const tours = [
   {
@@ -44,7 +44,7 @@ const tours = [
     title: "Zip Line Extreme",
     desc: "Canopy adventure - Half day",
     priceRange: "Seasonal pricing",
-    icon: Zipline
+    icon: Mountain
   },
   {
     id: 9,
@@ -93,7 +93,7 @@ const tours = [
     title: "Monkeys & Mammals",
     desc: "Wildlife spotting tour - Half day",
     priceRange: "Seasonal pricing",
-    icon: Monkey
+    icon: Trees
   }
 ];
 
