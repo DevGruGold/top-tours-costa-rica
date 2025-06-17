@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Header = () => {
@@ -6,14 +7,6 @@ const Header = () => {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <h1 className="text-xl font-bold text-green-600">Top Tours Costa Rica</h1>
         <div className="flex gap-2">
-          <a 
-            href="https://crpay.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition-colors"
-          >
-            💳 Make Payment
-          </a>
           <a 
             href="tel:+50689484857"
             className="bg-white border border-green-500 text-green-500 px-4 py-2 rounded-full text-sm"

@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { format } from 'date-fns';
 import { Calendar } from "@/components/ui/calendar";
@@ -12,6 +13,23 @@ interface BookingFormProps {
 const BookingForm = ({ tourTitle, tourPrice }: BookingFormProps) => {
   const [date, setDate] = useState<Date>(new Date());
   const [adults, setAdults] = useState(1);
+
+  const handleAdultsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    
+    // Allow empty input for editing
+    if (value === '') {
+      return;
+    }
+    
+    // Parse the number and ensure it's valid
+    const numValue = parseInt(value, 10);
+    
+    // Only update if it's a valid number and at least 1
+    if (!isNaN(numValue) && numValue >= 1) {
+      setAdults(numValue);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +69,7 @@ const BookingForm = ({ tourTitle, tourPrice }: BookingFormProps) => {
           type="number"
           min="1"
           value={adults}
-          onChange={(e) => setAdults(parseInt(e.target.value))}
+          onChange={handleAdultsChange}
           className="w-full"
         />
       </div>
